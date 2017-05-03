@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-
+        // usados
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         Laralib\L5scaffold\GeneratorsServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
@@ -208,7 +208,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-
+        // usados
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
