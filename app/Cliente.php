@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    //
-    
+        
     public function domicilio(){
-      return $this->belongsTo('App\Domicilio');
+
+      //Un cliente tiene un domicilio
+      return $this->hasOne('App\Domicilio');
+    }
+    public function cuenta(){
+    	return $this->hasOne('App\Cuentum');
     }
 }

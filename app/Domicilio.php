@@ -13,7 +13,13 @@ class Domicilio extends Model
     public function empleado(){
       return $this->belongsTo('App\Empleado');
     }
+
     public function cliente(){
-      return $this->hasOne('App\Cliente');
+      return $this->belongsTo('App\Cliente');
     }
+    public function localidad(){
+      return $this->belongsToMany('App\Localidad');
+    }
+
+
 }

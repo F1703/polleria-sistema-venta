@@ -14,4 +14,7 @@ class Localidad extends Model
     public function scopeSearch($query,$idprovincia){
       return $query->where('idprovincia','=',$idprovincia);
     }
+    public function domicilio(){
+    	return $this->hasMany('App\Domicilio');
+    }
 }

@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     //
-    public function email(){
-      return $this->belongsToMany('App\Email');
+    public function liquidacion(){
+      return $this->hasOne('App\Liquidacion');
     }
-    public function telefono(){
-      return $this->belongsToMany('App\Telefono');
+    public function venta(){
+      return $this->hasMany('App\Ventum');
     }
     public function domicilio() {
       return $this->hasOne('App\Domicilio');
+    }
+    public function user() {
+      return $this->hasOne('App\User');
     }
 }
