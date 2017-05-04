@@ -20,7 +20,6 @@ class CreateempleadosTable extends Migration {
 						$table->string('dni',10);
 						$table->string('cuil',11);
 						$table->date('fechanacimiento');
-						$table->string('email',45)->unique();
 						$table->string('telefono',13);
 						$table->enum('sexo',['masculino','femenino','otro']);
 						$table->string('cargo',20);
