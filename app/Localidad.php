@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Localidad extends Model
 {
-    //
+    protected $table = 'localidads';
+    protected $fillable = ['localidad','provincia_id'];
+
     public function provincia(){
       return $this->belongsToMany('App\Provincium');
     }

@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Domicilio extends Model
 {
-    //
+    
+    protected $table = 'domicilios';
+    protected $fillable = ['direccion','numero','barrio','localidad_id'];
+
     public function proveedor(){
       return $this->belongsToMany('App\Proveedor');
     }

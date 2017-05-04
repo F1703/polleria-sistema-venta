@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proveedor extends Model
 {
-    //
+    protected $table = 'proveedors';
+    protected $fillable = ['nombre','apellido','cuit','email','telefono'];
+
     public function domicilio(){
       return $this->belongsToMany('App\Domicilio');
     }
-    public function email(){
-      return $this->belongsToMany('App\Email');
+    public function compra(){
+      return $this->hasMany('App\Compra');
     }
-    public function telefono(){
-      return $this->belongsToMany('App\Telefono');
-    }
+
 }

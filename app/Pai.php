@@ -8,7 +8,7 @@ class Pai extends Model
 {
     //
     protected $table="pais";
-    protected $fillable=['descripcion'];
+    protected $fillable=['pais'];
 
     public function provincia(){
       return $this->hasMany('App\Provincium');
