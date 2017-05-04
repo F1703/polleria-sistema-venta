@@ -14,17 +14,19 @@ class CreateempleadosTable extends Migration {
 	{
 		Schema::create('empleados', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('turno');
-						$table->string('nombre');
-						$table->string('apellido');
-						$table->string('dni');
-						$table->string('cuil');
-						$table->string('sexo');
-						$table->string('cargo');
-						$table->string('password');
-						$table->integer('iddomicilio')->unsigned();
+            $table->string('turno',20);
+						$table->string('nombre',20);
+						$table->string('apellido',20);
+						$table->string('dni',10);
+						$table->string('cuil',11);
+						$table->date('fechanacimiento');
+						$table->string('email',45)->unique();
+						$table->string('telefono',13);
+						$table->enum('sexo',['masculino','femenino','otro']);
+						$table->string('cargo',20);
+						$table->integer('domicilio_id')->unsigned();
 
-						$table->foreign('iddomicilio')->references('id')->on('domicilios')->ondelete('cascade');
+						$table->foreign('domicilio_id')->references('id')->on('domicilios')->ondelete('cascade');
             $table->timestamps();
         });
 	}

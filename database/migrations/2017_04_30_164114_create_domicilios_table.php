@@ -14,12 +14,12 @@ class CreatedomiciliosTable extends Migration {
 	{
 		Schema::create('domicilios', function(Blueprint $table) {
             $table->increments('id');
-						$table->string('direccion');
+						$table->string('direccion',20);
 						$table->string('numero');
-            $table->string('barrio');
-						$table->integer('idlocalidad')->unsigned();
+            $table->string('barrio',20);
+						$table->integer('localidad_id')->unsigned();
 
-						$table->foreign('idlocalidad')->references('id')->on('localidads')->ondelete('cascade');
+						$table->foreign('localidad_id')->references('id')->on('localidads')->ondelete('cascade');
             $table->timestamps();
         });
 	}

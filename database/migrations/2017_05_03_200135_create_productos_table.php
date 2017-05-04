@@ -14,7 +14,14 @@ class CreateproductosTable extends Migration {
 	{
 		Schema::create('productos', function(Blueprint $table) {
             $table->increments('id');
-            
+						$table->string('codigo');
+            $table->string('descripcion');
+					  $table->enum('tipo',['unidad','kilo']);
+						$table->float('stok');
+						$table->float('stok_min');
+						$table->integer('categoria_id')->unsigned();
+
+						$table->foreign('categoria_id')->references('id')->on('categorias')->ondelete('cascade');
             $table->timestamps();
         });
 	}

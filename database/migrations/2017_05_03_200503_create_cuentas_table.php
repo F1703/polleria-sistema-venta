@@ -14,7 +14,10 @@ class CreatecuentasTable extends Migration {
 	{
 		Schema::create('cuentas', function(Blueprint $table) {
             $table->increments('id');
-            
+            $table->float('saldo');
+						$table->integer('cliente_id')->unsigned();
+
+						$table->foreign('cliente_id')->references('id')->on('clientes')->ondelete('cascade');
             $table->timestamps();
         });
 	}

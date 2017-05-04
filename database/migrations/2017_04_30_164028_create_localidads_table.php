@@ -14,10 +14,10 @@ class CreatelocalidadsTable extends Migration {
 	{
 		Schema::create('localidads', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('localidad');
-						$table->integer('idprovincia')->unsigned();
+            $table->string('localidad',20);
+						$table->integer('provincia_id')->unsigned();
 
-						$table->foreign('idprovincia')->references('id')->on('provincias')->ondelete('cascade');
+						$table->foreign('provincia_id')->references('id')->on('provincias')->ondelete('cascade');
             $table->timestamps();
         });
 	}

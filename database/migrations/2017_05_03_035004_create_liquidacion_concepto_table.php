@@ -14,9 +14,9 @@ class CreateLiquidacionConceptoTable extends Migration
     {
         Schema::create('liquidacion_concepto', function (Blueprint $table) {
             $table->increments('id');
-            // $table->float('monto');
-            // $table->float('descuento');
-            // $table->float('subtotal');
+            $table->float('monto');
+            $table->float('descuento');
+            $table->float('subtotal');
             $table->integer('liquidacion_id')->unsigned();
             $table->integer('concepto_id')->unsigned();
 

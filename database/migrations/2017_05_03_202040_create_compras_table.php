@@ -14,7 +14,14 @@ class CreatecomprasTable extends Migration {
 	{
 		Schema::create('compras', function(Blueprint $table) {
             $table->increments('id');
-            
+            $table->float('monto');
+						$table->date('fechacompra');
+						$table->integer('empleado_id')->unsigned();
+						$table->integer('proveedor_id')->unsigned();
+
+						$table->foreign('empleado_id')->references('id')->on('empleados')->ondelete('cascade');
+						$table->foreign('proveedor_id')->references('id')->on('proveedors')->ondelete('cascade');
+
             $table->timestamps();
         });
 	}

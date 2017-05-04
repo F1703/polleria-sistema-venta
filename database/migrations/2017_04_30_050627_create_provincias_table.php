@@ -14,11 +14,11 @@ class CreateprovinciasTable extends Migration {
 	{
 		Schema::create('provincias', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('provincia');
-						$table->string('codigopostal');
-						$table->integer('idpais')->unsigned();
+            $table->string('provincia',20);
+						$table->string('codigopostal',10);
+						$table->integer('pais_id')->unsigned();
 
-						$table->foreign('idpais')->references('id')->on('pais')->ondelete('cascade');
+						$table->foreign('pais_id')->references('id')->on('pais')->ondelete('cascade');
             $table->timestamps();
         });
 	}

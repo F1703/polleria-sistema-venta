@@ -14,7 +14,11 @@ class CreatetransaccionsTable extends Migration {
 	{
 		Schema::create('transaccions', function(Blueprint $table) {
             $table->increments('id');
-            
+            $table->float('pago');
+						$table->float('vuelto');
+						$table->integer('cuenta_id')->unsigned();
+						
+						$table->foreign('cuenta_id')->references('id')->on('cuentas')->ondelete('cascade');
             $table->timestamps();
         });
 	}

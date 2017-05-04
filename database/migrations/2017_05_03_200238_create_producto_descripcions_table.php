@@ -14,7 +14,12 @@ class CreateproductoDescripcionsTable extends Migration {
 	{
 		Schema::create('producto_descripcions', function(Blueprint $table) {
             $table->increments('id');
-            
+						$table->float('preciocompra');
+            $table->float('precioventa');
+						$table->date('vencimiento');
+						$table->integer('producto_id')->unsigned();
+
+						$table->foreign('producto_id')->references('id')->on('productos')->ondelete('cascade');
             $table->timestamps();
         });
 	}

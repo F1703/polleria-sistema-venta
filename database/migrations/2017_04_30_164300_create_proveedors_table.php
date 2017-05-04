@@ -14,11 +14,11 @@ class CreateproveedorsTable extends Migration {
 	{
 		Schema::create('proveedors', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-						$table->string('apellido');
-						$table->string('cuit');
-						$table->string('email');
-						$table->string('telefono');
+            $table->string('nombre',20);
+						$table->string('apellido',20);
+						$table->string('cuit',20);
+						$table->string('email',40);
+						$table->string('telefono',13);
             $table->timestamps();
         });
 	}

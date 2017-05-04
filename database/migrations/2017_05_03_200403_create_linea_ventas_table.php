@@ -14,7 +14,10 @@ class CreatelineaVentasTable extends Migration {
 	{
 		Schema::create('linea_ventas', function(Blueprint $table) {
             $table->increments('id');
-            
+						$table->float('cantidad');
+            $table->float('subtotal');
+						$table->integer('');
+
             $table->timestamps();
         });
 	}

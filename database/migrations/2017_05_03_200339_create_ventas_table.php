@@ -14,7 +14,11 @@ class CreateventasTable extends Migration {
 	{
 		Schema::create('ventas', function(Blueprint $table) {
             $table->increments('id');
-            
+            $table->float('monto');
+						$table->date('fecha');
+						$table->integer('empleado_id')->unsigned();
+
+						$table->foreign('empleado_id')->references('id')->on('empleados')->ondelete('cascade');
             $table->timestamps();
         });
 	}

@@ -17,7 +17,6 @@ class CreateclientesTable extends Migration {
             $table->string('nombre');
 						$table->string('apellido');
 						$table->string('dni')->unique();
-						$table->boolean('estado');
 						$table->string('email')->unique();
 						$table->string('telefono');
 						$table->integer('domicilio_id')->unsigned();

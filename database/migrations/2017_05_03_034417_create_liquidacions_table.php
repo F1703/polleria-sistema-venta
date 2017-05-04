@@ -15,10 +15,10 @@ class CreateliquidacionsTable extends Migration {
 		Schema::create('liquidacions', function(Blueprint $table) {
             $table->increments('id');
             $table->float('sueldoneto');
-						// $table->date('fechadesde');
-						// $table->date('fechahasta');
-						// $table->string('periodo');
-						// $table->bolean('estado');
+						$table->date('fechadesde');
+						$table->date('fechahasta');
+						$table->string('periodo');
+						$table->bolean('estado');
 						$table->integer('empleado_id')->unsigned();
 
 						$table->foreign('empleado_id')->references('id')->on('empleados')->ondelete();

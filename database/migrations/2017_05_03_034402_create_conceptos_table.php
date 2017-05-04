@@ -15,9 +15,9 @@ class CreateconceptosTable extends Migration {
 		Schema::create('conceptos', function(Blueprint $table) {
             $table->increments('id');
             $table->string('concepto');
-						// $table->float('montofijo');
-						// $table->float('montovariable');
-						// $table->string('tipo');
+						$table->float('montofijo');
+						$table->float('montovariable');
+						$table->string('tipo');
             $table->timestamps();
         });
 	}
