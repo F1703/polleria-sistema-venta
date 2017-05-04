@@ -29,12 +29,12 @@ class DatabaseSeeder extends Seeder
               $state=\DB::table('provincias')->insertGetId(array(
                   'provincia'   =>  $faker->state,
                   'codigopostal'  =>  $faker->postcode,
-                  'idpais'        =>  $country,
+                  'pais_id'        =>  $country,
               ));
                 for ($k=0; $k <5 ; $k++) {
                   $city=\DB::table('localidads')->insert(array(
                       'localidad' => $faker->city,
-                      'idprovincia' => $state,
+                      'provincia_id' => $state,
                   ));
                 }//for
             }//for

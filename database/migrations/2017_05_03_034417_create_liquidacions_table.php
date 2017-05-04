@@ -18,7 +18,7 @@ class CreateliquidacionsTable extends Migration {
 						$table->date('fechadesde');
 						$table->date('fechahasta');
 						$table->string('periodo');
-						$table->bolean('estado');
+						$table->boolean('estado');
 						$table->integer('empleado_id')->unsigned();
 
 						$table->foreign('empleado_id')->references('id')->on('empleados')->ondelete();

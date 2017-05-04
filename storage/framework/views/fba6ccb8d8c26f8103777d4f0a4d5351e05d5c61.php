@@ -17,10 +17,15 @@
             <form action="<?php echo e(route('pais.store')); ?>" method="POST">
                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                 <div class="form-group">
-                  <label for="nombre">Nombre Pais</label>
-                  <input type="text" name="nombre" class="form-control" >
+                  <?php /* <label for="nombre">Nombre Pais</label>
+                  <input type="text" name="nombre" class="form-control" > */ ?>
+                  <?php echo e(Form::label('pais','Pais')); ?>
+
+                  <?php echo e(Form::text('pais',null,['class'=>'form-control','placeholder'=>'pais'])); ?>
+
                 </div>
-                
+
+
 
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
