@@ -8,7 +8,7 @@ class Provincium extends Model
 {
     //
     protected $table ="provincias";
-    protected $fillable=['descripcion','idpais'];
+    protected $fillable=['codigopostal','descripcion','pais_id'];
 
     public function pais(){
       return $this->belongsToMany('App\Pai');

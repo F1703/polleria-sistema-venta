@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
+
+	protected $table = 'clientes';
+    protected $fillable = ['nombre','apellido','dni','email','telefono','domicilio_id']; 
+
+
         
     public function domicilio(){
 
