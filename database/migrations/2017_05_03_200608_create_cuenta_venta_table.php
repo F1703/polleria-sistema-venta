@@ -14,7 +14,6 @@ class CreateCuentaVentaTable extends Migration
     {
         Schema::create('cuenta_venta', function (Blueprint $table) {
             $table->increments('id');
-            // $table->enum('estado',['pagado','nopagado']);
             $table->integer('cuenta_id')->unsigned();
             $table->integer('venta_id')->unsigned();
 

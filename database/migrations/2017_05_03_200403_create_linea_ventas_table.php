@@ -12,12 +12,12 @@ class CreatelineaVentasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('linea_ventas', function(Blueprint $table) {
+		Schema::create('linea_venta', function(Blueprint $table) {
             $table->increments('id');
 						$table->float('cantidad');
             $table->float('subtotal');
-						$table->integer('venta_id')->unsigned();
 						$table->integer('producto_id')->unsigned();
+						$table->integer('venta_id')->unsigned();
 
 						$table->foreign('venta_id')->references('id')->on('ventas')->ondelete('cascade');
 						$table->foreign('producto_id')->references('id')->on('productos')->ondelete('cascade');
@@ -32,7 +32,7 @@ class CreatelineaVentasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('linea_ventas');
+		Schema::drop('linea_venta');
 	}
 
 }

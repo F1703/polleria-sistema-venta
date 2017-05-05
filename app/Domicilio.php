@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Domicilio extends Model
 {
     //
+    protected $table = "domicilios";
+    
     public function proveedor(){
-      return $this->belongsToMany('App\Proveedor');
+      return $this->hasMany('App\Proveedor');
     }
     public function empleado(){
       return $this->belongsTo('App\Empleado');

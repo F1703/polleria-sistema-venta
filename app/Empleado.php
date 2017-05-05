@@ -16,7 +16,7 @@ class Empleado extends Model
     public function domicilio() {
       return $this->hasOne('App\Domicilio');
     }
-    public function user() {
-      return $this->hasOne('App\User');
+    public function usuario() {
+      return $this->hasOne('App\Usuario');
     }
 }

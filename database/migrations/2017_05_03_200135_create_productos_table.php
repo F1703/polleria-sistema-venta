@@ -17,8 +17,8 @@ class CreateproductosTable extends Migration {
 						$table->string('codigo');
             $table->string('descripcion');
 					  $table->enum('tipo',['unidad','kilo']);
-						$table->float('stok');
-						$table->float('stok_min');
+						$table->float('stock');
+						$table->float('stockminimo');
 						$table->integer('categoria_id')->unsigned();
 
 						$table->foreign('categoria_id')->references('id')->on('categorias')->ondelete('cascade');

@@ -39,5 +39,17 @@ class DatabaseSeeder extends Seeder
                 }//for
             }//for
         }//for
+
+        
+
+        \DB::table('proveedors')->insert(array(
+          'nombre'    => $faker->userName,
+          'apellido'  => $faker->lastName,
+          'cuit'      => $faker->randomDigitNotNull,
+          'email'     => $faker->email,
+          'telefono'  => $faker->phoneNumber,
+        ));
+
+
     }
 }
