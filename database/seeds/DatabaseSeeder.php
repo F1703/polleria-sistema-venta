@@ -40,8 +40,29 @@ class DatabaseSeeder extends Seeder
             }//for
         }//for
 
-        
 
+
+        //emplead
+        for ($i=0; $i <2 ; $i++) {
+          # code...
+          $dom=\DB::table('domicilios')->insertGetId(array(
+            'direccion' => $faker->address,
+            'numero'    =>  $faker->randomDigit,
+            'barrio'    => "norte",
+            'localidad_id' => "2",
+          ));
+          \DB::table('empleados')->insert(array(
+            'turno'   =>  "mañana",
+            'nombre'  =>  $faker->name,
+            'apellido'  => $faker->lastName,
+            'dni'       => "12344".$i,
+            'sexo'      => "masculino",
+            'cargo'     => "admin",
+            'telefono'  =>  $faker->phoneNumber,
+            'nacimiento'  =>  $faker->dateTime,
+            'domicilio_id'  => $dom,
+          ));
+        }
         \DB::table('proveedors')->insert(array(
           'nombre'    => $faker->userName,
           'apellido'  => $faker->lastName,
@@ -50,6 +71,33 @@ class DatabaseSeeder extends Seeder
           'telefono'  => $faker->phoneNumber,
         ));
 
+        for ($i=0; $i <3 ; $i++) {
+          # code...
+          $cat=\DB::table('categorias')->insertGetId(array(
+            'categoria' =>  "categoria-".$i,
+          ));
+            for ($j=0; $j < 2; $j++) {
+              # code...
+              $pro=\DB::table('productos')->insertGetId(array(
+                'descripcion' =>  "descripcion-".$j,
+                'codigo'      =>  "11".$j,
+                'stock'       =>  "3",
+                'stockminimo' =>  "5",
+                'tipo'        =>  "unidad",
+                'categoria_id'  => $cat,
+              ));
+              for ($k=0; $k < 2; $k++) {
+                # code...
+                \DB::table('producto_descripcions')->insert(array(
+                  'preciocompra'  =>  "3",
+                  'precioventa'  =>  "4",
+                  'vencimiento'  => $faker->dateTime,
+                  'producto_id'   =>  $pro,
+                ));
+
+              }
+            }
+        }
 
     }
 }

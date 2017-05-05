@@ -15,6 +15,7 @@ class VentumController extends Controller {
 	 */
 	public function index()
 	{
+
 		$ventas = Ventum::orderBy('id', 'desc')->paginate(10);
 
 		return view('ventas.index', compact('ventas'));
@@ -39,8 +40,10 @@ class VentumController extends Controller {
 	public function store(Request $request)
 	{
 		$ventum = new Ventum();
+		$ventum->fecha=$request->fecha;
+		$ventum->monto=$request->monto;
+		$empleado_id=\Auth::user()->empleado_id;
 
-		
 
 		$ventum->save();
 
@@ -84,7 +87,7 @@ class VentumController extends Controller {
 	{
 		$ventum = Ventum::findOrFail($id);
 
-		
+
 
 		$ventum->save();
 

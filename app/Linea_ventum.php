@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Linea_ventum extends Model
 {
 
-	  protected $table = 'linea_ventas';
+	  protected $table = 'linea_venta';
     protected $fillable = ['cantidad','subtotal','producto_id','venta_id'];
 
     public function venta(){
