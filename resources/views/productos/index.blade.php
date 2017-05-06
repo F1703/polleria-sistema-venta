@@ -1,16 +1,16 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('header')
-    <div class="page-header clearfix">
+@section('contentheader_title')
+    {{-- <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> Productos
-            <a class="btn btn-success pull-right" href="{{ route('productos.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
-        </h1>
+            <i class="glyphicon glyphicon-align-justify"></i> Productos --}}
+            <a class="btn btn-success pull-left" href="{{ route('productos.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+        {{-- </h1>
 
-    </div>
+    </div> --}}
 @endsection
 
-@section('content')
+@section('main-content')
     <div class="row">
         <div class="col-md-12">
             @if($productos->count())
@@ -18,7 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            
+
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -27,7 +27,13 @@
                         @foreach($productos as $producto)
                             <tr>
                                 <td>{{$producto->id}}</td>
-                                
+                                <td>{{$producto->descripcion}}</td>
+                                <td>{{$producto->codigo}}</td>
+                                <td>{{$producto->stock}}</td>
+                                <td>{{$producto->stockminimo}}</td>
+                                <td>{{$producto->tipo}}</td>
+                                <td>{{$producto->categoria}}</td>
+
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('productos.show', $producto->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('productos.edit', $producto->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
