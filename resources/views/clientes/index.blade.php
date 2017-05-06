@@ -18,17 +18,6 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Dni</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
-                            <th>Direccion</th>
-                            <th>Numero</th>
-                            <th>Barrio</th>
-                            <th>Localidad</th>
-                            <th>Provincia</th>
-                            <th>Pais</th>
 
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -37,18 +26,6 @@
                     <tbody>
                         @foreach($clientes as $cliente)
                             <tr>
-                                <td>{{$cliente->id}}</td>
-                                <td>{{$cliente->nombre}}</td>
-                                <td>{{$cliente->apellido}}</td>
-                                <td>{{$cliente->dni}}</td>
-                                <td>{{$cliente->email}}</td>
-                                <td>{{$cliente->telefono}}</td>
-                                <td>{{$cliente->domicilio->direccion}}</td>
-                                <td>{{$cliente->domicilio->numero}}</td>
-                                <td>{{$cliente->domicilio->barrio}}</td>
-                                <td>{{$cliente->domicilio->localidad->localidad}}</td>
-                                <td>{{$cliente->domicilio->localidad->provincia->provincia}}</td>
-                                <td>{{$cliente->domicilio->localidad->provincia->pais->pais}}</td>
 
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('clientes.show', $cliente->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>

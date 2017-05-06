@@ -30,6 +30,6 @@ Route::resource('domicilios','DomicilioController');
 Route::resource('proveedors','ProveedorController');
 Route::resource('clientes','ClienteController');
 Route::resource('empleados','EmpleadoController');
-Route::resource('compras','ComprasController');
+Route::resource('compras','CompraController');
 Route::resource('ventas','VentumController');
 Route::resource('liquidacions','LiquidacionController');
