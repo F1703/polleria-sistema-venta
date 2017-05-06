@@ -15,7 +15,7 @@ class Producto extends Model
     }
 
     public function descripcionproducto(){
-    	return $this->hasMany('App\Producto_descripcion','id');
+    	return $this->belongsTo('App\Producto_descripcion','id');
     }
 
 

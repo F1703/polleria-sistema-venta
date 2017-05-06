@@ -45,7 +45,7 @@
 
                 <div class="form-group">
                   {{Form::label('categoria','Categoria')}}
-                  {{Form::text('categoria',null,['class'=>'form-control','placeholder'=>'categoria','required'])}}
+                  {{Form::select('categoria',$categoria,null,['class'=>'form-control select-categoria','placeholder'=>'categoria','required'])}}
                 </div>
 
                 <div class="form-group">
@@ -59,7 +59,8 @@
                 </div>
                 <div class="form-group">
                   {{Form::label('fechavencimiento','Fecha de vencimiento')}}
-                  {{Form::text('fechavencimiento',null,['class'=>'form-control','placeholder'=>'fechavencimiento','required'])}}
+                  {{-- {{Form::text('fechavencimiento',null,['class'=>'form-control datepicker','placeholder'=>'fechavencimiento','required'])}} --}}
+                  {{Form::date('fechavencimiento', \Carbon\Carbon::now(),['class'=>'form-control'])}}
                 </div>
 
 
