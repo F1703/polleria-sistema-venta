@@ -16,13 +16,7 @@
 
             <form action="{{ route('productos.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group">
-                  {{Form::label('categoria','Categoria')}}
-                  {{Form::text('categoria',null,['class'=>'form-control','placeholder'=>'categoria','required'])}}
-                </div>
 
-<<<<<<< HEAD
-=======
                 <div class="form-group">
                   {{Form::label('descripcion','Descripcion')}}
                   {{Form::text('descripcion',null,['class'=>'form-control','placeholder'=>'descripcion','required'])}}
@@ -51,7 +45,7 @@
 
                 <div class="form-group">
                   {{Form::label('categoria','Categoria')}}
-                  {{Form::text('categoria',null,['class'=>'form-control','placeholder'=>'categoria','required'])}}
+                  {{Form::select('categoria',$categoria,null,['class'=>'form-control select-categoria','placeholder'=>'categoria','required'])}}
                 </div>
 
                 <div class="form-group">
@@ -65,11 +59,11 @@
                 </div>
                 <div class="form-group">
                   {{Form::label('fechavencimiento','Fecha de vencimiento')}}
-                  {{Form::text('fechavencimiento',null,['class'=>'form-control','placeholder'=>'fechavencimiento','required'])}}
+                  {{-- {{Form::text('fechavencimiento',null,['class'=>'form-control datepicker','placeholder'=>'fechavencimiento','required'])}} --}}
+                  {{Form::date('fechavencimiento', \Carbon\Carbon::now(),['class'=>'form-control'])}}
                 </div>
 
 
->>>>>>> 7ce17b564de3c527725e0ee66c8c18c117cd7568
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <a class="btn btn-link pull-right" href="{{ route('productos.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>

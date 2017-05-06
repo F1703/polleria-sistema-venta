@@ -11,7 +11,7 @@ class Producto_descripcion extends Model
     protected $fillable = ['preciocompra','precioventa','vencimiento','producto_id'];
 
     public function producto(){
-      $this->belongsTo('App\Producto','id');
+      $this->hasOne('App\Producto');
     }
 
     public function lineaventa(){
