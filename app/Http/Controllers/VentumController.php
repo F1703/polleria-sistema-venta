@@ -22,9 +22,18 @@ class VentumController extends Controller {
 			$linea=$ventas->lineaventa;
 			$ventas->lineaventa->each(function($linea){
 				$linea->producto->categoria;
+
 				$linea->producto->descripcionproducto;
+				// $d->lists('id');
+				// dd($d);
+
 			});
+
 		});
+		// $descrip=$productos->descripcionproducto;
+		// $orden = $descrip->sortByDesc('created_at')->paginate(3);
+		// $orden->values()->all();
+		// dd($orden);
 		dd($ventas);
 		return view('ventas.index', compact('ventas'));
 	}

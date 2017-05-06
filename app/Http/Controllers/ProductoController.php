@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Producto;
+use App\Producto_descripcion;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller {
@@ -16,7 +17,11 @@ class ProductoController extends Controller {
 	public function index()
 	{
 		$productos = Producto::orderBy('id', 'desc')->paginate(10);
-
+		$productos->each(function($productos){
+			$productos->categoria;
+			$productos->descripcionproduto;
+		});
+		dd($productos);
 		return view('productos.index', compact('productos'));
 	}
 
@@ -40,7 +45,7 @@ class ProductoController extends Controller {
 	{
 		$producto = new Producto();
 
-		
+
 
 		$producto->save();
 
@@ -84,7 +89,7 @@ class ProductoController extends Controller {
 	{
 		$producto = Producto::findOrFail($id);
 
-		
+
 
 		$producto->save();
 

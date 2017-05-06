@@ -33,3 +33,4 @@ Route::resource('empleados','EmpleadoController');
 Route::resource('compras','CompraController');
 Route::resource('ventas','VentumController');
 Route::resource('liquidacions','LiquidacionController');
+Route::resource('productos','ProductoController');

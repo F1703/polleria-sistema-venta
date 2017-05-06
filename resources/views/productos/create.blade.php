@@ -16,8 +16,11 @@
 
             <form action="{{ route('productos.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                  {{Form::label('categoria','Categoria')}}
+                  {{Form::text('categoria',null,['class'=>'form-control','placeholder'=>'categoria','required'])}}
+                </div>
 
-                
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <a class="btn btn-link pull-right" href="{{ route('productos.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
