@@ -18,7 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            
+
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -27,7 +27,11 @@
                         @foreach($empleados as $empleado)
                             <tr>
                                 <td>{{$empleado->id}}</td>
-                                
+                                <td>{{$empleado->nombre}}</td>
+                                <td>{{$empleado->apellido}}</td>
+                                <td>{{$empleado->dni}}</td>
+                                <td>{{$empleado->cuil}}</td>
+                                <td>{{$empleado->sexo}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('empleados.show', $empleado->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('empleados.edit', $empleado->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
