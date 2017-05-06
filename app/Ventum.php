@@ -15,7 +15,7 @@ class Ventum extends Model
       return $this->belongsTo('App\Empleado');
     }
     public function lineaventa(){
-      return $this->hasMany('App\Linea_ventum','venta_id');
+      return $this->hasMany('App\Linea_ventum','id');
     }
 
     public function cuenta(){

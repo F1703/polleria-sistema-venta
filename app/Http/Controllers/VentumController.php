@@ -19,7 +19,11 @@ class VentumController extends Controller {
 		$ventas = Ventum::orderBy('id', 'desc')->paginate(10);
 		$ventas->each(function($ventas){
 			$ventas->empleado;
-			$ventas->lineaventa;
+			$linea=$ventas->lineaventa;
+			$ventas->lineaventa->each(function($linea){
+				$linea->producto->categoria;
+				$linea->producto->descripcionproducto;
+			});
 		});
 		dd($ventas);
 		return view('ventas.index', compact('ventas'));

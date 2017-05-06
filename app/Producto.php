@@ -11,16 +11,16 @@ class Producto extends Model
     protected $fillable = ['codigo','descripcion','tipo','stock','stock_min','categoria_id'];
 
     public function categoria(){
-      return $this->belongsToMany('App\Categorium');
+      return $this->belongsTo('App\Categorium');
     }
 
     public function descripcionproducto(){
-    	return $this->hasMany('App\Producto_descripcion');
+    	return $this->hasMany('App\Producto_descripcion','id');
     }
 
 
     public function lineacompra(){
-      return $this->hasOne('App\Linea_compra');
+      return $this->hasOne('App\Linea_compra','id');
     }
 
 }
