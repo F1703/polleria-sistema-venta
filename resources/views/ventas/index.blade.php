@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('contentheader_title')
-    <div class="page-header clearfix">
+    {{-- <div class="page-header clearfix">
         <h1>
-            <i class="glyphicon glyphicon-align-justify"></i> Ventas
-            <a class="btn btn-success pull-right" href="{{ route('ventas.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
-        </h1>
+            <i class="glyphicon glyphicon-align-justify"></i> Ventas --}}
+            <a class="btn btn-success pull-left" href="{{ route('ventas.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+        {{-- </h1>
 
-    </div>
+    </div> --}}
 @endsection
 
 @section('main-content')
