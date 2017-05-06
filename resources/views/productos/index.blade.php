@@ -19,7 +19,10 @@
                             <th>Stock</th>
                             <th>Stockminimo</th>
                             <th>Stocktipo</th>
-                            <th>Categoria</th> 
+                            <th>Categoria</th>
+                            <th>PrecioV</th>
+                            <th>PrecioC</th>
+                            <th>Vencimiento</th>
 
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -35,6 +38,10 @@
                                 <td>{{$producto->stockminimo}}</td>
                                 <td>{{$producto->tipo}}</td>
                                 <td>{{$producto->categoria->categoria}}</td>
+                                <td>{{$producto->descripcionproducto->preciocompra}}</td>
+                                <td>{{$producto->descripcionproducto->precioventa}}</td>
+                                <td>{{$producto->descripcionproducto->vencimiento}}</td>
+
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('productos.show', $producto->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('productos.edit', $producto->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

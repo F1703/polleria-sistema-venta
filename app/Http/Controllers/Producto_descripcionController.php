@@ -15,7 +15,7 @@ class Producto_descripcionController extends Controller {
 	 */
 	public function index()
 	{
-		$producto_descripcions = Producto_descripcion::orderBy('id', 'desc')->paginate(10);
+		$producto_descripcions = Producto_descripcion::orderBy('id', 'asc')->paginate(10);
 
 		return view('producto_descripcions.index', compact('producto_descripcions'));
 	}
@@ -40,7 +40,7 @@ class Producto_descripcionController extends Controller {
 	{
 		$producto_descripcion = new Producto_descripcion();
 
-		
+
 
 		$producto_descripcion->save();
 
@@ -84,7 +84,7 @@ class Producto_descripcionController extends Controller {
 	{
 		$producto_descripcion = Producto_descripcion::findOrFail($id);
 
-		
+
 
 		$producto_descripcion->save();
 

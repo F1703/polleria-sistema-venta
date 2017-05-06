@@ -17,9 +17,10 @@ class ProductoController extends Controller {
 	 */
 	public function index()
 	{
-		$productos = Producto::orderBy('id', 'desc')->paginate(10);
+		$productos = Producto::orderBy('id', 'asc')->paginate(1000);
 		$productos->each(function($productos){
 			$productos->categoria;
+			$productos->descripcionproducto;
 		});
 		// dd($productos);
 		return view('productos.index', compact('productos'));
@@ -46,10 +47,23 @@ class ProductoController extends Controller {
 	public function store(Request $request)
 	{
 		$producto = new Producto();
-
-		dd($request->all());
-
+		$producto->categoria()->associate($request->categoria);
+		$producto->descripcion= $request->descripcion;
+		$producto->codigo= $request->codigo;
+		$producto->stock= $request->stock;
+		$producto->stockminimo = $request->stockminimo;
+		$producto->tipo= $request->tipo;
 		$producto->save();
+
+		$desc = new Producto_descripcion();
+		// $desc->producto()->associate($request->categoria);
+		$desc->producto_id= $producto->id;
+		$desc->preciocompra=$request->preciocompra;
+		$desc->precioventa=$request->precioventa;
+		$desc->vencimiento=$request->vencimiento;
+		$desc->save();
+		// dd($desc);
+
 
 		return redirect()->route('productos.index')->with('message', 'Item created successfully.');
 	}

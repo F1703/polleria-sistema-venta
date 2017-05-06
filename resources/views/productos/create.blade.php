@@ -58,9 +58,9 @@
                   {{Form::text('precioventa',null,['class'=>'form-control','placeholder'=>'precioventa','required'])}}
                 </div>
                 <div class="form-group">
-                  {{Form::label('fechavencimiento','Fecha de vencimiento')}}
-                  {{-- {{Form::text('fechavencimiento',null,['class'=>'form-control datepicker','placeholder'=>'fechavencimiento','required'])}} --}}
-                  {{Form::date('fechavencimiento', \Carbon\Carbon::now(),['class'=>'form-control'])}}
+                  {{Form::label('vencimiento','Fecha de vencimiento')}}
+                  {{-- {{Form::text('vencimiento',null,['class'=>'form-control datepicker','placeholder'=>'vencimiento','required'])}} --}}
+                  {{Form::date('vencimiento', \Carbon\Carbon::now(),['class'=>'form-control'])}}
                 </div>
 
 

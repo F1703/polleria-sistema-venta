@@ -61,82 +61,82 @@ class DatabaseSeeder extends Seeder
           $cat=\DB::table('categorias')->insertGetId(array(
             'categoria' =>  "categoria-".$i,
           ));
-            for ($j=0; $j < 2; $j++) {
-              $pro=\DB::table('productos')->insertGetId(array(
-                'descripcion' =>  "descripcion-".$j,
-                'codigo'      =>  "11".$j,
-                'stock'       =>  "3",
-                'stockminimo' =>  "5",
-                'tipo'        =>  "unidad",
-                'categoria_id'  => $cat,
-              ));
-              for ($k=0; $k < 2; $k++) {
-                \DB::table('producto_descripcions')->insert(array(
-                  'preciocompra'  =>  "3",
-                  'precioventa'  =>  "4",
-                  'vencimiento'  => $faker->dateTime,
-                  'producto_id'   =>  $pro,
-                ));
-
-              }
-            }
+            // for ($j=0; $j < 2; $j++) {
+            //   $pro=\DB::table('productos')->insertGetId(array(
+            //     'descripcion' =>  "descripcion-".$j,
+            //     'codigo'      =>  "11".$j,
+            //     'stock'       =>  "3",
+            //     'stockminimo' =>  "5",
+            //     'tipo'        =>  "unidad",
+            //     'categoria_id'  => $cat,
+            //   ));
+            //   for ($k=0; $k < 2; $k++) {
+            //     \DB::table('producto_descripcions')->insert(array(
+            //       'preciocompra'  =>  "3",
+            //       'precioventa'  =>  "4",
+            //       'vencimiento'  => $faker->dateTime,
+            //       'producto_id'   =>  $pro,
+            //     ));
+            //
+            //   }
+            // }
         }
         //END PRODUCTO
 
 
 
         // EMPLEADO
-        for ($i=0; $i <2 ; $i++) {
-          $dom=\DB::table('domicilios')->insertGetId(array(
-            'direccion' => $faker->address,
-            'numero'    =>  $faker->randomDigit,
-            'barrio'    => "norte",
-            'localidad_id' => "2",
-          ));
-          $emp=\DB::table('empleados')->insertGetId(array(
-            'turno'   =>  "mañana",
-            'nombre'  =>  $faker->name,
-            'apellido'  => $faker->lastName,
-            'dni'       => "12344".$i,
-            'sexo'      => "masculino",
-            'cargo'     => "admin",
-            'telefono'  =>  $faker->phoneNumber,
-            'nacimiento'  =>  $faker->dateTime,
-            'domicilio_id'  => $dom,
-          ));
-          for ($j=0; $j < 2; $j++) {
-            $ven=\DB::table('ventas')->insertGetId(array(
-              'fecha'   =>  $faker->dateTime,
-              'monto'   =>  "11".$j,
-              'empleado_id' => $emp,
-            ));
-            for ($k=0; $k < 3; $k++) {
-              $cat=\DB::table('categorias')->insertGetId(array(
-                'categoria' =>  $faker->title,
-              ));
-              $pro=\DB::table('productos')->insertGetId(array(
-                'descripcion'   => $faker->randomLetter,
-                'codigo'        => $faker->randomDigit,
-                'stock'   => "33".$k,
-                'stockminimo'   => "33".$k,
-                'tipo'    => "unidad",
-                'categoria_id'  =>  $cat,
-              ));
-              \DB::table('linea_venta')->insert(array(
-                'cantidad' => "12".$k,
-                'subtotal' => "12".$k,
-                'producto_id' =>  $pro,
-                'venta_id'    =>  $ven,
-              ));
-            }
-          }
-          \DB::table('users')->insert(array(
-            'name'  => $faker->name,
-            'email' =>  $faker->email,
-            'password'  =>  bcrypt("franco"),
-            'empleado_id' => $emp,
-          ));
-        }
+        // for ($i=0; $i <2 ; $i++) {
+        //   $dom=\DB::table('domicilios')->insertGetId(array(
+        //     'direccion' => $faker->address,
+        //     'numero'    =>  $faker->randomDigit,
+        //     'barrio'    => "norte",
+        //     'localidad_id' => "2",
+        //   ));
+        //   $emp=\DB::table('empleados')->insertGetId(array(
+        //     'turno'   =>  "mañana",
+        //     'nombre'  =>  $faker->name,
+        //     'apellido'  => $faker->lastName,
+        //     'dni'       => "12344".$i,
+        //     'sexo'      => "masculino",
+        //     'cargo'     => "admin",
+        //     'telefono'  =>  $faker->phoneNumber,
+        //     'nacimiento'  =>  $faker->dateTime,
+        //     'domicilio_id'  => $dom,
+        //   ));
+        //   for ($j=0; $j < 2; $j++) {
+        //     $ven=\DB::table('ventas')->insertGetId(array(
+        //       'fecha'   =>  $faker->dateTime,
+        //       'monto'   =>  "11".$j,
+        //       'empleado_id' => $emp,
+        //     ));
+        //     for ($k=0; $k < 3; $k++) {
+        //       $cat=\DB::table('categorias')->insertGetId(array(
+        //         'categoria' =>  $faker->title,
+        //       ));
+        //       $pro=\DB::table('productos')->insertGetId(array(
+        //         'descripcion'   => $faker->randomLetter,
+        //         'codigo'        => $faker->randomDigit,
+        //         'stock'   => "33".$k,
+        //         'stockminimo'   => "33".$k,
+        //         'tipo'    => "unidad",
+        //         'categoria_id'  =>  $cat,
+        //       ));
+        //       \DB::table('linea_venta')->insert(array(
+        //         'cantidad' => "12".$k,
+        //         'subtotal' => "12".$k,
+        //         'producto_id' =>  $pro,
+        //         'venta_id'    =>  $ven,
+        //       ));
+        //     }
+        //   }
+        //   \DB::table('users')->insert(array(
+        //     'name'  => $faker->name,
+        //     'email' =>  $faker->email,
+        //     'password'  =>  bcrypt("franco"),
+        //     'empleado_id' => $emp,
+        //   ));
+        // }
         // END EMPLEADO
 
 
