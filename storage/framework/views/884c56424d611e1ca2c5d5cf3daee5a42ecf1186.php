@@ -16,6 +16,17 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dni</th>
+                            <th>Email</th>
+                            <th>Telefono</th>
+                            <th>Direccion</th>
+                            <th>Numero</th>
+                            <th>Barrio</th>
+                            <th>Localidad</th>
+                            <th>Provincia</th>
+                            <th>Pais</th>
 
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -25,6 +36,17 @@
                         <?php foreach($clientes as $cliente): ?>
                             <tr>
                                 <td><?php echo e($cliente->id); ?></td>
+                                <td><?php echo e($cliente->nombre); ?></td>
+                                <td><?php echo e($cliente->apellido); ?></td>
+                                <td><?php echo e($cliente->dni); ?></td>
+                                <td><?php echo e($cliente->email); ?></td>
+                                <td><?php echo e($cliente->telefono); ?></td>
+                                <td><?php echo e($cliente->domicilio->direccion); ?></td>
+                                <td><?php echo e($cliente->domicilio->numero); ?></td>
+                                <td><?php echo e($cliente->domicilio->barrio); ?></td>
+                                <td><?php echo e($cliente->domicilio->localidad->localidad); ?></td>
+                                <td><?php echo e($cliente->domicilio->localidad->provincia->provincia); ?></td>
+                                <td><?php echo e($cliente->domicilio->localidad->provincia->pais->pais); ?></td>
 
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="<?php echo e(route('clientes.show', $cliente->id)); ?>"><i class="glyphicon glyphicon-eye-open"></i> View</a>

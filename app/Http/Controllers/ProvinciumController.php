@@ -27,13 +27,13 @@ class ProvinciumController extends Controller {
 			->with('provincias', $provincias);
 
 	}
-	public function consulta($idpais){
+	public function consulta($pais_id){
 		// $localidads = Localidad::Search($idpais);
 		// $provincias= \DB::table('provincias')
 		// ->where('idpais','=',$idpais)->get();
 		// dd($provincias);
 		// $provincias = Provincium::Search($idpais)->get();
-		$provincias=\DB::table('provincias')->where('idpais','=',$idpais)->get();
+		$provincias=\DB::table('provincias')->where('pais_id','=',$pais_id)->get();
 		// dd($provincias);
 		return $provincias;
 	}
@@ -61,7 +61,7 @@ class ProvinciumController extends Controller {
 		$provincium = new Provincium();
 		// dd($request->all());
 		$provincium->descripcion=$request->descripcion;
-		$provincium->idpais=$request->idpais;
+		$provincium->pais_id=$request->pais_id;
 		$provincium->save();
 
 		return redirect()->route('provincias.index')->with('message', 'Item created successfully.');

@@ -10,7 +10,7 @@ class Localidad extends Model
     protected $fillable = ['localidad','provincia_id'];
 
     public function provincia(){
-      return $this->belongsToMany('App\Provincium');
+      return $this->belongsTo('App\Provincium');
     }
 
     public function scopeSearch($query,$idprovincia){

@@ -11,7 +11,7 @@ class Provincium extends Model
     protected $fillable=['codigopostal','descripcion','pais_id'];
 
     public function pais(){
-      return $this->belongsToMany('App\Pai');
+      return $this->belongsTo('App\Pai');
     }
     public function localidad(){
       return $this->hasMany('App\Localidad');

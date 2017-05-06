@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('header')
+@section('contentheader_title')
     <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> Ventas
@@ -10,7 +10,7 @@
     </div>
 @endsection
 
-@section('content')
+@section('main-content')
     <div class="row">
         <div class="col-md-12">
             @if($ventas->count())
@@ -18,7 +18,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            
+
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -27,7 +27,7 @@
                         @foreach($ventas as $ventum)
                             <tr>
                                 <td>{{$ventum->id}}</td>
-                                
+
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('ventas.show', $ventum->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('ventas.edit', $ventum->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Domicilio;
+use App\Localidad;
 
 use App\Cliente;
 use App\Pai;
@@ -20,7 +21,10 @@ class ClienteController extends Controller {
 	public function index()
 	{
 		$clientes = Cliente::orderBy('id', 'desc')->paginate(10);
-
+		$clientes->each(function($clientes){
+			$clientes->domicilio->localidad->provincia->pais;
+		});
+		// dd($clientes);
 		return view('clientes.index', compact('clientes'));
 	}
 
@@ -44,31 +48,23 @@ class ClienteController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+
+
+		$l = Localidad::find($request->localidad_id);
 		$domicilio=new Domicilio();
 		$domicilio->direccion=$request->direccion;
 		$domicilio->numero=$request->numero;
 		$domicilio->barrio=$request->barrio;
-		$domicilio->idlocalidad=$request->idlocalidad;
+		$domicilio->localidad()->associate($l);
 		$domicilio->save();
-
+		// dd($request->all());
 		$cliente = new Cliente();
-		$cliente->nombre=$reques->nombre;
-		$cliente->apellido=$reques->apellido;
-		$cliente->estado=$reques->estado;
-		$cliente->dni=$reques->dni;
-		$cliente->iddomicilio=$domicilio->id;
+		$cliente->nombre=$request->nombre;
+		$cliente->apellido=$request->apellido;
+		$cliente->dni=$request->dni;
+		$cliente->domicilio()->associate($domicilio);
 		$cliente->save();
-
-		$email=new Email();
-		$email->email=$request->email;
-		$email->save();
-		$cliente->email()->attach($email);
-
-		$telefono=new Telefono();
-		$telefono->telefono=$reques->telefono;
-		$telefono->save();
-		$cliente->teleono()->attach($telefono);
-
+		// dd($cliente);
 
 		return redirect()->route('clientes.index')->with('message', 'Item created successfully.');
 	}

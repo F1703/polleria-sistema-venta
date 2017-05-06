@@ -33,13 +33,6 @@
                   <?php echo e(Form::text('dni',null,['class'=>'form-control','placeholder'=>'3299881822','required'])); ?>
 
                 </div>
-                <div class="form-group">
-                  <?php echo e(Form::label('estado','Estado')); ?>
-
-                  <?php echo e(Form::text('estado',null,['class'=>'form-control','placeholder'=>'deudor','required'])); ?>
-
-                </div>
-
 
                 <div class="form-group">
                   <?php echo e(Form::label('email','Email')); ?>
@@ -56,25 +49,23 @@
 
 
                 <div class="form-group">
-                  <?php echo e(Form::label('idpais','Pais')); ?>
+                  <?php echo e(Form::label('pais_id','Pais')); ?>
 
-                  <?php echo e(Form::select('idpais',$pais,null,['class'=>'form-control','placeholder'=>'Seleccione pais'])); ?>
+                  <?php echo e(Form::select('pais_id',$pais,null,['class'=>'form-control','placeholder'=>'Seleccione pais'])); ?>
 
                 </div>
-
                 <div class="form-group">
-                  <label for="idprovincia">Provincia</label>
-                  <select class="form-control" name="idprovincia" id="idprovincia">
+                  <label for="provincia_id">Provincia</label>
+                  <select class="form-control" name="provincia_id" id="provincia_id">
                       <option selected="selected" value="">Seleccione provincia</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="idlocalidad">Localidad</label>
-                  <select class="form-control" name="idlocalidad" id="idlocalidad">
+                  <label for="localidad_id">Localidad</label>
+                  <select class="form-control" name="localidad_id" id="localidad_id">
                       <option selected="selected" value="">Seleccione localidad</option>
                   </select>
                 </div>
-
                 <div class="form-group">
                   <?php echo e(Form::label('direccion','Direccion')); ?>
 
@@ -132,8 +123,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script >
- $('#idpais').click(function(){
-   pais = $('#idpais').val();
+ $('#pais_id').click(function(){
+   pais = $('#pais_id').val();
   //  console.log(pais);
    var form = $('#form1');
    var url = form.attr('action').replace(':IDPAIS',pais);
@@ -144,10 +135,10 @@
      datatype : "json"
    }).done(function(dato){
     //  console.log(dato);
-      $('#idprovincia').text('');
-      $('#idlocalidad').text('');
+      $('#provincia_id').text('');
+      $('#localidad_id').text('');
      $.each(dato,function(index, el) {
-       $('#idprovincia').append(
+       $('#provincia_id').append(
          '<option   value="'+el.id+'">'+el.provincia+'</option>',
        );
       //  console.log(el);
@@ -157,8 +148,8 @@
 
 
 
- $('#idprovincia').click(function(){
-   provincia = $('#idprovincia').val();
+ $('#provincia_id').click(function(){
+   provincia = $('#provincia_id').val();
   //  console.log(pais);
    var form = $('#form2');
    var url = form.attr('action').replace(':IDPROVINCIA',provincia);
@@ -169,9 +160,9 @@
      datatype : "json"
    }).done(function(datos){
     //  console.log(dato);
-      $('#idlocalidad').text('');
+      $('#localidad_id').text('');
      $.each(datos,function(index, el) {
-       $('#idlocalidad').append(
+       $('#localidad_id').append(
          '<option   value="'+el.id+'">'+el.localidad+'</option>',
        );
       //  console.log(el);

@@ -21,10 +21,10 @@ class LocalidadController extends Controller {
 
 
 
-	public function consulta($idprovincia){
+	public function consulta($provincia_id){
 		// $localidads = Localidad::Search($idpais);
 		$localidads= \DB::table('localidads')
-		->where('idprovincia','=',$idprovincia)->get();
+		->where('provincia_id','=',$provincia_id)->get();
 		// dd($localidads);
 		return $localidads;
 	}

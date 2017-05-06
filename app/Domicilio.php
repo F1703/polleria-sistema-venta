@@ -18,10 +18,10 @@ class Domicilio extends Model
     }
 
     public function cliente(){
-      return $this->belongsTo('App\Cliente');
+      return $this->hasOne('App\Cliente');
     }
     public function localidad(){
-      return $this->belongsToMany('App\Localidad');
+      return $this->belongsTo('App\Localidad');
     }
 
 

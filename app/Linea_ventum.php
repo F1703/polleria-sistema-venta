@@ -11,7 +11,7 @@ class Linea_ventum extends Model
     protected $fillable = ['cantidad','subtotal','producto_id','venta_id'];
 
     public function venta(){
-      return $this->belongsTo('App\Ventum');
+      return $this->belongsToMany('App\Ventum','venta_id','producto_id','cantidad','subtotal');
     }
     public function producto(){
       return $this->belongsTo('App\Producto');

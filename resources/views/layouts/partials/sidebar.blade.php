@@ -35,16 +35,22 @@
             <!-- Optionally, you can add icons to the links -->
             {{-- <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li> --}}
             <li class="treeview active">
-              <a href="#"><i class='fa fa-circle-o'></i> <span>Pais</span><i class="fa fa-angle-left pull-right"></i></a>
+              {{-- <a href="#"><i class='fa fa-circle-o'></i> <span>Pais</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                   <li><a href="{{ url('pais') }}">Pais</a></li>
                   <li><a href="{{url('provincias')}}">Provincia</a></li>
                   <li><a href="{{url('localidads')}}">Localidad</a></li>
-              </ul>
+              </ul> --}}
             </li>
-            <li class="#"><a href="{{url('domicilios')}}"><i class='fa fa-circle-o'></i> <span>Domicilio</span></a></li>
-            <li class="#"><a href="{{url('proveedors')}}"><i class='fa fa-circle-o'></i> <span>Proveedor</span></a></li>
+            {{-- <li class="#"><a href="{{url('domicilios')}}"><i class='fa fa-circle-o'></i> <span>Domicilio</span></a></li> --}}
+            <li class="#"><a href="{{url('proveedors')}}"><i class='fa fa-circle-o'></i> <span>Proveedores</span></a></li>
             <li class="#"><a href="{{url('clientes')}}"><i class='fa fa-circle-o'></i> <span>Clientes</span></a></li>
+            <li class="#"><a href="{{url('ventas')}}"><i class='fa fa-circle-o'></i> <span>Ventas</span></a></li>
+            <li class="#"><a href="{{url('compras')}}"><i class='fa fa-circle-o'></i> <span>Compras</span></a></li>
+            <li class="#"><a href="{{url('empleados')}}"><i class='fa fa-circle-o'></i> <span>Empleados</span></a></li>
+            <li class="#"><a href="{{url('liquidacions')}}"><i class='fa fa-circle-o'></i> <span>Liquidaciones</span></a></li>
+            <li class="#"><a href="{{url('productos')}}"><i class='fa fa-circle-o'></i> <span>Productos</span></a></li>
+
             <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
             <li class="treeview active">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
