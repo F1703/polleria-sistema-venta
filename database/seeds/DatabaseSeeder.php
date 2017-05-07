@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
 
         $faker=Faker::create();
 
-        \DB::table('users')->insert(array(
-          'name'  => "franco",
-          'email' =>  "franco@gmail.com",
-          'password'  =>  bcrypt("franco"),
-          'empleado_id' => "1",
-        ));
+        // \DB::table('users')->insert(array(
+        //   'name'  => "franco",
+        //   'email' =>  "franco@gmail.com",
+        //   'password'  =>  bcrypt("franco"),
+        //   'empleado_id' => "1",
+        // ));
 
         for ($i=0; $i < 5; $i++) {
           $country=\DB::table('pais')->insertGetId(array(

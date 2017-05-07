@@ -25,7 +25,7 @@
     <form action="<?php echo e(url('/login')); ?>" method="post">
         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="<?php echo e(trans('adminlte_lang::message.fullname')); ?>" name="name"/>
+            <input type="text" class="form-control" placeholder="<?php echo e(trans('adminlte_lang::message.email')); ?>" name="email"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
