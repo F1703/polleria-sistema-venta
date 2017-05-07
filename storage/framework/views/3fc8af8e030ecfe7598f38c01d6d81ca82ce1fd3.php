@@ -25,7 +25,7 @@
     <form action="<?php echo e(url('/login')); ?>" method="post">
         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="<?php echo e(trans('adminlte_lang::message.email')); ?>" name="email"/>
+            <input type="text" class="form-control" placeholder="<?php echo e(trans('adminlte_lang::message.fullname')); ?>" name="name"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -47,10 +47,10 @@
         </div>
     </form>
 
-    <?php echo $__env->make('auth.partials.social_login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php /* <?php echo $__env->make('auth.partials.social_login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> */ ?>
 
     <a href="<?php echo e(url('/password/reset')); ?>"><?php echo e(trans('adminlte_lang::message.forgotpassword')); ?></a><br>
-    <a href="<?php echo e(url('/register')); ?>" class="text-center"><?php echo e(trans('adminlte_lang::message.registermember')); ?></a>
+    <?php /* <a href="<?php echo e(url('/register')); ?>" class="text-center"><?php echo e(trans('adminlte_lang::message.registermember')); ?></a> */ ?>
 
 </div><!-- /.login-box-body -->
 

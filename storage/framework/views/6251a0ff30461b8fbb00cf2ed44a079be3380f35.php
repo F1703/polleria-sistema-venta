@@ -112,7 +112,7 @@
                     </ul>
                 </li>
                 <?php if(Auth::guest()): ?>
-                    <li><a href="<?php echo e(url('/register')); ?>"><?php echo e(trans('adminlte_lang::message.register')); ?></a></li>
+                    <?php /* <li><a href="<?php echo e(url('/register')); ?>"><?php echo e(trans('adminlte_lang::message.register')); ?></a></li> */ ?>
                     <li><a href="<?php echo e(url('/login')); ?>"><?php echo e(trans('adminlte_lang::message.login')); ?></a></li>
                 <?php else: ?>
                     <!-- User Account Menu -->

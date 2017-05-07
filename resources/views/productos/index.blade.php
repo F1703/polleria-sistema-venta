@@ -38,9 +38,9 @@
                                 <td>{{$producto->stockminimo}}</td>
                                 <td>{{$producto->tipo}}</td>
                                 <td>{{$producto->categoria->categoria}}</td>
-                                <td>{{$producto->descripcionproducto->preciocompra}}</td>
+                                {{-- <td>{{$producto->descripcionproducto->preciocompra}}</td>
                                 <td>{{$producto->descripcionproducto->precioventa}}</td>
-                                <td>{{$producto->descripcionproducto->vencimiento}}</td>
+                                <td>{{$producto->descripcionproducto->vencimiento}}</td> --}}
 
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('productos.show', $producto->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>

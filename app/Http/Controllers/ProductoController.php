@@ -20,12 +20,17 @@ class ProductoController extends Controller {
 		$productos = Producto::orderBy('id', 'asc')->paginate(1000);
 		$productos->each(function($productos){
 			$productos->categoria;
-			$productos->descripcionproducto;
+			// $productos->descripcionproducto;
 		});
 		// dd($productos);
 		return view('productos.index', compact('productos'));
 	}
 
+
+
+	public function consulta(){
+		return  "hola";
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -46,6 +51,8 @@ class ProductoController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+
+
 		$producto = new Producto();
 		$producto->categoria()->associate($request->categoria);
 		$producto->descripcion= $request->descripcion;
@@ -53,17 +60,20 @@ class ProductoController extends Controller {
 		$producto->stock= $request->stock;
 		$producto->stockminimo = $request->stockminimo;
 		$producto->tipo= $request->tipo;
-		$producto->save();
+		// $producto->descripcionproducto()->associate($desc);
+		// $producto->save();
+		// dd($producto);
 
 		$desc = new Producto_descripcion();
-		// $desc->producto()->associate($request->categoria);
-		$desc->producto_id= $producto->id;
+		$desc->producto()->associate($producto);
+		// $desc->producto_id= "3";
 		$desc->preciocompra=$request->preciocompra;
 		$desc->precioventa=$request->precioventa;
 		$desc->vencimiento=$request->vencimiento;
-		$desc->save();
-		// dd($desc);
-
+		// $producto->descripcionproducto()->save($producto);
+		// $desc->producto()->save($producto);
+		// $desc->save();
+		dd($desc);
 
 		return redirect()->route('productos.index')->with('message', 'Item created successfully.');
 	}

@@ -26,7 +26,6 @@ class VentumController extends Controller {
 				$linea->producto->descripcionproducto;
 				// $d->lists('id');
 				// dd($d);
-
 			});
 
 		});
@@ -34,7 +33,7 @@ class VentumController extends Controller {
 		// $orden = $descrip->sortByDesc('created_at')->paginate(3);
 		// $orden->values()->all();
 		// dd($orden);
-		dd($ventas);
+		// dd($ventas);
 		return view('ventas.index', compact('ventas'));
 	}
 
@@ -45,6 +44,7 @@ class VentumController extends Controller {
 	 */
 	public function create()
 	{
+		
 		return view('ventas.create');
 	}
 

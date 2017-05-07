@@ -34,3 +34,7 @@ Route::resource('compras','CompraController');
 Route::resource('ventas','VentumController');
 Route::resource('liquidacions','LiquidacionController');
 Route::resource('productos','ProductoController');
+Route::get('productos/consulta/{consulta}',[
+  'uses'  => 'ProductoController@busqueda',
+  'as'    =>  'productos.consulta',
+]);
